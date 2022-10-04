@@ -20,7 +20,7 @@
               <li class="scroll-to-section"><a href="#contact">Message Us</a></li> 
               <li class="scroll-to-section"><div class="main-red-button"><a href="#contact">Contact Now</a></div></li> 
             </ul>        
-            <a class='menu-trigger'>
+            <a v-on:click="handler" class='menu-trigger'>
                 <span>Menu</span>
             </a>
             <!-- ***** Menu End ***** -->
@@ -31,3 +31,16 @@
   </header>
   <!-- ***** Header Area End ***** -->
 </template>
+
+
+<script>
+export default {
+  name: 'Header',
+  methods: {
+    handler() {
+      $(this).toggleClass('active');
+      $('.header-area .nav').slideToggle(200);
+    }
+  }
+}
+</script>
